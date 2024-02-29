@@ -12,12 +12,17 @@ Descreve ações e requisitos que devem ser true quando a função main é chama
 Durante o processo de compilação, os arquivos fonte geram arquivos objetos. O makefile é um código que serve para automatizar o processo de criação desses arquivos objetos de maneira eficiente e organizadas, de forma que a cada nova compilação seja feita de forma simples e sem problemas com esses arquivos, levando em consideração as dependências entre os arquivos eetc.
 
 #### (b) Descreva brevemente o processo realizado pelo utilitário **make** para compilar um programa.
+"make" é como se fosse um atalho que executa todas as linhas do codigo makefile. Esse utilitário usa o ambiente de execução dele próprio, isso significa que as variáveis de ambiente ali contidas sobrepoem variáveis de mesmo nome no ambiente existente.   
 
 #### (c) Qual é a sintaxe utilizada para criar um novo **target**?
+target : dependência1 dependência2
+      receita
 
 #### (d) Como são definidas as dependências de um **target**, para que elas são utilizadas?
-
+Depende do tipo de dependência. Se for uma variável ela é definida da forma que se define uma variável, se for um arquivo deve ser criado um arquivo anteriormente. As dependências são colocadas após o ":" que procede o target. O que ocorre é que target é a ação ou o arquivo que deseja-se gerar. As dependências são arquivos ou variáveis utilizadas para criar o target seguindo a receita proposta.
+ 
 #### (e) O que são as regras do **Makefile**, qual a diferença entre regras implícitas e explícitas?
+As regras são as receitas para realizar determinadas ações. As regras explicitas deixam claro e especificado como as ações devem ser realizadas, ja as regras implicitas são construídas de forma "resumida" e entendidas pelo makefile através de padrões ou com a utilização de sufixos.
 
 ## 4. Sobre a arquitetura **ARM Cortex-M** responda:
 
