@@ -27,13 +27,14 @@ As regras são as receitas para realizar determinadas ações. As regras explici
 ## 4. Sobre a arquitetura **ARM Cortex-M** responda:
 
 ### (a) Explique o conjunto de instruções ***Thumb*** e suas principais vantagens na arquitetura ARM. Como o conjunto de instruções ***Thumb*** opera em conjunto com o conjunto de instruções ARM?
+Instruções Thumb tem a mesma função das instruções ARM porém são menores tendo apenas 16 bits, enquanto instruções ARM tem 32 bits. E ntretanto, em alguns casos utilizá-las pode aumentar o numero de instruções que o processador deve executar. Para aumentar a eficiência, utiliza-se os dois tipos de instruções, reduzindo significamente o tamanho do código e mantendo um baixo consumo de energia.
 
-### (b) Explique as diferenças entre as arquiteturas ***ARM Load/Store*** e ***Register/Register***.
+### (b) Explique as diferenças entre as arquiteturas ***ARM Load/Store*** e ***Register/Memory***.
 
 ### (c) Os processadores **ARM Cortex-M** oferecem diversos recursos que podem ser explorados por sistemas baseados em **RTOS** (***Real Time Operating Systems***). Por exemplo, a separação da execução do código em níveis de acesso e diferentes modos de operação. Explique detalhadamente como funciona os níveis de acesso de execução de código e os modos de operação nos processadores **ARM Cortex-M**.
 
 ### (d) Explique como os processadores ARM tratam as exceções e as interrupções. Quais são os diferentes tipos de exceção e como elas são priorizadas? Descreva a estratégia de **group priority** e **sub-priority** presente nesse processo.
-Quando uma interrupção ou exceção é acionada o processador pausa a execução do código, executa a ação especificada naquela interrupção (ISR) e depois volta a executar o código a partir de onde havia sido interrompido. COMPLETAR RESPOSTA
+Quando uma interrupção ou exceção é acionada o processador pausa a execução do código, executa a ação especificada naquela interrupção (ISR) e depois volta a executar o código a partir de onde havia sido interrompido. Os diferentes tipos de exceção são reset, NMI (non-maskable interrupt), hardFault, SVCall e interrupt. As exceções são associadas ao seu nível de prioridade. A estratégia de group priority e sub priority funciona de forma que em cada nível interrupções com características semelhantes sejam agrupadas e dentro desse nível sejam ordenadas de acordo com a prioridade entre elas, a chamada subprioridade.
 
 ### (e) Qual a diferença entre os registradores **CPSR** (***Current Program Status Register***) e **SPSR** (***Saved Program Status Register***)?
 
