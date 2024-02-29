@@ -4,11 +4,12 @@
 Quando existem componentes com diferentes arquiteturas e deseja-se fazer uma compilação entre elas, é necessário que haja uma "tradução" das instruções de uma arquitetura para que ela rode na outra.
  
 ## 2. O que é um código de inicialização ou ***startup*** e qual sua finalidade?
-Descreve ações e requisitos que devem ser true quando a função main é chamada. Esse código declara por exemplo o vetor de intrrupções e  define o ponto de entrada da aplicação.
+Descreve ações e requisitos que devem ser true quando a função main é chamada. Esse código declara por exemplo o vetor de intrrupções, define o ponto de entrada da aplicação., configura periféricos e sistema de clock, entre outros.
 
 ## 3. Sobre o utilitário **make** e o arquivo **Makefile responda**:
 
 #### (a) Explique com suas palavras o que é e para que serve o **Makefile**.
+Durante o processo de compilação, os arquivos fonte geram arquivos objetos. O makefile é um código que serve para automatizar o processo de criação desses arquivos objetos de maneira eficiente e organizadas, de forma que a cada nova compilação seja feita de forma simples e sem problemas com esses arquivos, levando em consideração as dependências entre os arquivos eetc.
 
 #### (b) Descreva brevemente o processo realizado pelo utilitário **make** para compilar um programa.
 
@@ -37,6 +38,7 @@ Descreve ações e requisitos que devem ser true quando a função main é chama
 ### (h) O que é a tabela de vetores de interrupção?
 
 ### (i) Qual a finalidade do NVIC (**Nested Vectored Interrupt Controller**) nos microcontroladores ARM e como ele pode ser utilizado em aplicações de tempo real?
+o NVIC é um vetor que funciona como uma lista de interrupções ordenadas de acordo com suas prioridades. As interrupções são necessárias para que o programa realize determinada ação caso algo não ocorra como deve ocorrer, elas pausam a execução até que o problema seja resolvido e após isso o programa principal volta a ser executado normalmente. Uma aplicação em tempo real seria uma interrupção acionada ao apertar um botão. 
 
 ### (j) Em modo de execução normal, o Cortex-M pode fazer uma chamada de função usando a instrução **BL**, que muda o **PC** para o endereço de destino e salva o ponto de execução atual no registador **LR**. Ao final da função, é possível recuperar esse contexto usando uma instrução **BX LR**, por exemplo, que atualiza o **PC** para o ponto anterior. No entanto, quando acontece uma interrupção, o **LR** é preenchido com um valor completamente  diferente,  chamado  de  **EXC_RETURN**.  Explique  o  funcionamento  desse  mecanismo  e especifique como o **Cortex-M** consegue fazer o retorno da interrupção. 
 
