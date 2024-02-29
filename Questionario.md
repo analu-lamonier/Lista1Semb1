@@ -41,9 +41,10 @@ As regras são as receitas para realizar determinadas ações. As regras explici
 ### (g) Qual o propósito do Program Status Register (PSR) nos processadores ARM?
 
 ### (h) O que é a tabela de vetores de interrupção?
+o NVIC é um vetor que funciona como uma lista de interrupções ordenadas de acordo com suas prioridades. 
 
 ### (i) Qual a finalidade do NVIC (**Nested Vectored Interrupt Controller**) nos microcontroladores ARM e como ele pode ser utilizado em aplicações de tempo real?
-o NVIC é um vetor que funciona como uma lista de interrupções ordenadas de acordo com suas prioridades. As interrupções são necessárias para que o programa realize determinada ação caso algo não ocorra como deve ocorrer, elas pausam a execução até que o problema seja resolvido e após isso o programa principal volta a ser executado normalmente. Uma aplicação em tempo real seria uma interrupção acionada ao apertar um botão. 
+As interrupções são necessárias para que o programa realize determinada ação caso algo não ocorra como deve ocorrer, elas pausam a execução até que o problema seja resolvido e após isso o programa principal volta a ser executado normalmente. Uma aplicação em tempo real seria uma interrupção acionada ao apertar um botão. 
 
 ### (j) Em modo de execução normal, o Cortex-M pode fazer uma chamada de função usando a instrução **BL**, que muda o **PC** para o endereço de destino e salva o ponto de execução atual no registador **LR**. Ao final da função, é possível recuperar esse contexto usando uma instrução **BX LR**, por exemplo, que atualiza o **PC** para o ponto anterior. No entanto, quando acontece uma interrupção, o **LR** é preenchido com um valor completamente  diferente,  chamado  de  **EXC_RETURN**.  Explique  o  funcionamento  desse  mecanismo  e especifique como o **Cortex-M** consegue fazer o retorno da interrupção. 
 
