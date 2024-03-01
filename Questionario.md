@@ -42,8 +42,10 @@ Quando uma interrupção ou exceção é acionada o processador pausa a execuç�
 Registradores agem como armazenamento rapido de memoria local para todas as operações de processamentos de dados. O CPSR monitora e controla operações internas contendo bits de estado do processador como bits de controle de interrupção. O SPSR  armazena temporariamente o conteudo do CPSR enquanto uma execução é processada. Na execução de uma rotina especial de retorno do programa faz com que o conteúdo salvo no SPSR seja copiado pra o CPSR.
 
 ### (f) Qual a finalidade do **LR** (***Link Register***)?
+O LR armazena o endereço de retorno ao chamar uma função ou sub-rotina. Ou seja, quando a função é chamada ou quando inicia-se uma sub-rotina, o LR é atualizado automaticamente e no fim dessa ação o controle de programa volta ao programa de chamada.
 
 ### (g) Qual o propósito do Program Status Register (PSR) nos processadores ARM?
+Formar um conjunto adicional de banco de registros, PSR permite que uma instrução execute ações dependendo do resultado de uma instrução anterior.
 
 ### (h) O que é a tabela de vetores de interrupção?
 o NVIC é um vetor que funciona como uma lista de interrupções ordenadas de acordo com suas prioridades. 
@@ -52,6 +54,7 @@ o NVIC é um vetor que funciona como uma lista de interrupções ordenadas de ac
 As interrupções são necessárias para que o programa realize determinada ação caso algo não ocorra como deve ocorrer, elas pausam a execução até que o problema seja resolvido e após isso o programa principal volta a ser executado normalmente. Uma aplicação em tempo real seria uma interrupção acionada ao apertar um botão. 
 
 ### (j) Em modo de execução normal, o Cortex-M pode fazer uma chamada de função usando a instrução **BL**, que muda o **PC** para o endereço de destino e salva o ponto de execução atual no registador **LR**. Ao final da função, é possível recuperar esse contexto usando uma instrução **BX LR**, por exemplo, que atualiza o **PC** para o ponto anterior. No entanto, quando acontece uma interrupção, o **LR** é preenchido com um valor completamente  diferente,  chamado  de  **EXC_RETURN**.  Explique  o  funcionamento  desse  mecanismo  e especifique como o **Cortex-M** consegue fazer o retorno da interrupção. 
+
 
 ### (k) Qual  a  diferença  no  salvamento  de  contexto,  durante  a  chegada  de  uma  interrupção,  entre  os processadores Cortex-M3 e Cortex M4F (com ponto flutuante)? Descreva em termos de tempo e também de uso da pilha. Explique também o que é ***lazy stack*** e como ele é configurado. 
 
