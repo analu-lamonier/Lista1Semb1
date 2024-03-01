@@ -37,6 +37,7 @@ Instruções Thumb tem a mesma função das instruções ARM porém são menores
 Quando uma interrupção ou exceção é acionada o processador pausa a execução do código, executa a ação especificada naquela interrupção (ISR) e depois volta a executar o código a partir de onde havia sido interrompido. Os diferentes tipos de exceção são reset, NMI (non-maskable interrupt), hardFault, SVCall e interrupt. As exceções são associadas ao seu nível de prioridade. A estratégia de group priority e sub priority funciona de forma que em cada nível interrupções com características semelhantes sejam agrupadas e dentro desse nível sejam ordenadas de acordo com a prioridade entre elas, a chamada subprioridade.
 
 ### (e) Qual a diferença entre os registradores **CPSR** (***Current Program Status Register***) e **SPSR** (***Saved Program Status Register***)?
+Registradores agem como armazenamento rapido de memoria local para todas as operações de processamentos de dados. O CPSR monitora e controla operações internas contendo bits de estado do processador como bits de controle de interrupção. O SPSR  armazena temporariamente o conteudo do CPSR enquanto uma execução é processada. Na execução de uma rotina especial de retorno do programa faz com que o conteúdo salvo no SPSR seja copiado pra o CPSR.
 
 ### (f) Qual a finalidade do **LR** (***Link Register***)?
 
