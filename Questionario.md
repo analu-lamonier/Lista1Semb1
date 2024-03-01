@@ -57,7 +57,7 @@ As interrupções são necessárias para que o programa realize determinada aç�
 
 
 ### (k) Qual  a  diferença  no  salvamento  de  contexto,  durante  a  chegada  de  uma  interrupção,  entre  os processadores Cortex-M3 e Cortex M4F (com ponto flutuante)? Descreva em termos de tempo e também de uso da pilha. Explique também o que é ***lazy stack*** e como ele é configurado. 
-
+Quando acontece uma interrupção, o contexto atual é salvo na pilha chamada stack frame e a rotina é chamada. Na pilah então são salvos endereço de retorno, o PSR e os registros. Se há ponto flutuante, o contexto de pf também é salvo na pilha e o tempo de stacking (empilhamento) é maior. Para economizar tempo no empilhamento para ponto flutuante, pode-se desligar esse salvamento de pf ou utilizar o lazy stack, onde ele reserva todo o stack mas não necessáriamente busca na memória os valores, não salva de fato os pontos flutuantrs. Para utilizar estratégia a rotina não pode utilizar ponto flutuante.
 
 ## Referências
 
