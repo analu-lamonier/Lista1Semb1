@@ -30,6 +30,7 @@ As regras são as receitas para realizar determinadas ações. As regras explici
 Instruções Thumb tem a mesma função das instruções ARM porém são menores tendo apenas 16 bits, enquanto instruções ARM tem 32 bits. E ntretanto, em alguns casos utilizá-las pode aumentar o numero de instruções que o processador deve executar. Para aumentar a eficiência, utiliza-se os dois tipos de instruções, reduzindo significamente o tamanho do código e mantendo um baixo consumo de energia.
 
 ### (b) Explique as diferenças entre as arquiteturas ***ARM Load/Store*** e ***Register/Memory***.
+ O  processador  opera  com   dados  mantidos  em  registradores (Register/Memory).  Instruções   separadas de carregamento e armazenamento (Load/Store) transferem dados entre o banco de registradores e a memória externa. Os acessos à memória são lentos, portanto, separar os acessos à memória do processamento de dados oferece uma vantagem, pois pode-se usar os itens de dados mantidos no banco de registradores várias vezes, sem precisar de vários acessos à memória, aumentando a eficiência na execução do código. 
 
 ### (c) Os processadores **ARM Cortex-M** oferecem diversos recursos que podem ser explorados por sistemas baseados em **RTOS** (***Real Time Operating Systems***). Por exemplo, a separação da execução do código em níveis de acesso e diferentes modos de operação. Explique detalhadamente como funciona os níveis de acesso de execução de código e os modos de operação nos processadores **ARM Cortex-M**.
 
